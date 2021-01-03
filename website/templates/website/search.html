@@ -1,0 +1,23 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block title %}{{q}} | Udego{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <h1 class="mb-4">Search for <span class="text-info">"{{q}}"</span></h1>
+    {% if searchBlogs|length == 0 %}
+        <h3 class="text-center text-primary">No Blog Found!</h3>
+    {% endif %}
+    <div class="row">
+        {% for searchBlog in searchBlogs %}
+        <div class="col-md-4 col-sm-6 col-12">
+            <a href="{% url 'post' searchBlog.slug %}">
+                <div class="card card-body">
+                    <h3>{{searchBlog.title}}</h3>
+                    <img src="{{searchBlog.sub_course.course.coverPic.url}}" alt="{{searchBlog.title}}" class="img-fluid">
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

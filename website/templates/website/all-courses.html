@@ -1,0 +1,26 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block title %}All Courses | Udego{% endblock %}
+{% block content %}
+<section id="courses">
+    <div class="container text-center my-3 py-2">
+        <h1 class="my-5 display-4">Our All Courses</h1>
+
+        {% for topic, data in topicDict.items %}
+        <h1 class="my-4">{{topic}}</h1>
+        <div class="row my-2">
+        {% for name, details in data.items %}
+                <div class="col-md-3 col-sm-6 col-12">
+                    <a href="{% url 'post' details.slug %}">
+                        <div class="card card-body">
+                            <h3>{{name}}</h3>
+                            <img src="{{details.image}}" alt="{{name}}" class="img-fluid">
+                        </div>
+                    </a>
+                </div>
+        {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

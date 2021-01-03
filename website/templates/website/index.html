@@ -1,0 +1,47 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block title %}Udego | Learning Platform{% endblock %}
+{% block content %}
+<section id="intro">
+    <div class="container py-5 text-center">
+        <h1 class="display-4"><strong class="text-info">U</strong>dego</h1>
+        <p class="lead">A learning platform that helps you in <span class="text-info">academics, coding, and
+                job.</span>.</p>
+        <a href="#courses" class="btn btn-primary btn-lg">Check Our Courses <i class="fa fa-hand-o-left"></i></a>
+    </div>
+</section>
+<section id="courses">
+    <div class="container text-center my-3 py-2">
+        <h1 class="mb-5">Check out our courses</h1>
+        <div class="row my-2">
+            {% for course, blogslug in popularBlogs.items %}
+            {% if forloop.counter <= 4 %}
+            <div class="col-md-3 col-sm-6 col-12">
+                <a href="{% url 'post' blogslug.slug %}">
+                    <div class="card card-body">
+                        <h3>{{course}}</h3>
+                        <img src="{{blogslug.image}}" alt="Ruby" class="img-fluid">
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row my-2">
+            {% for course, blogslug in popularBlogs.items %}
+            {% if forloop.counter > 4 and forloop.counter <= 8 %}
+            <div class="col-md-3 col-sm-6 col-12">
+                <a href="{% url 'post' blogslug.slug %}">
+                    <div class="card card-body">
+                        <h3>{{course}}</h3>
+                        <img src="{{blogslug.image}}" alt="Ruby" class="img-fluid">
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <a href="{% url 'allCourses' %}" class="mt-4 btn btn-lg btn-primary"><i class="fa fa-eye"></i> View More</a>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,28 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #ecf0f1;
+}
+
+#intro {
+    background-color: #fff;
+}
+
+/* code {
+    font-size: 18px !important;
+} */
+
+/* #post p{
+    font-size: 18px;
+} */
+
+#post h1 {
+    color:#130f40 !important;
+    font-weight: 600 !important;
+}
+#post h2, #post h3{
+    color: #30336b !important;
+    font-weight: 500 !important;
+}
