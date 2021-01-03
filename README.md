@@ -1,5 +1,6 @@
 # Udego
 A learning platform that helps you in academics, coding, and job
+Live Link - https://sandipsadhukhan.pythonanywhere.com/
 
 ## What is do
 It is a article based course website primarily focused on academics, coding type tutorial blogs.
@@ -7,6 +8,15 @@ It is a article based course website primarily focused on academics, coding type
 ---
 You Have a seprate admin panel to manage all your course and subcourse.
 
+
+## Screenshots
+Course Page
+
+<img src="./screenshots/course.jpg">
+
+Home Page
+
+<img src="./screenshots/homepage.jpg">
 
 ## Technology Used
 - HTML
@@ -26,6 +36,9 @@ https://github.com/sandippakhanna/udego.git
 # install all dependencies
 cd udego
 pip install -r requirements.txt
+
+# migrate the database
+python manage.py migrate
 
 # run the app
 python manage.py runserver
